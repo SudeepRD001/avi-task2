@@ -1,0 +1,134 @@
+{
+	"info": {
+		"_postman_id": "81ffa1b0-a265-435c-b44d-bb53277c7af8",
+		"name": "PA (NW) - Task 2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "45725559"
+	},
+	"item": [
+		{
+			"name": "https://35.200.176.139/login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"hiring-2\",\r\n  \"password\": \"hiring-2\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://35.200.176.139/login",
+					"protocol": "https",
+					"host": [
+						"35",
+						"200",
+						"176",
+						"139"
+					],
+					"path": [
+						"login"
+					]
+				},
+				"description": "PART A – AWS Cloud Configuration (API)\r\nStep 1: Login via API (Get Auth Token)"
+			},
+			"response": []
+		},
+		{
+			"name": "https://35.200.176.139/api/cloud",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "X-CSRFToken",
+						"value": "c469bae70933a6dca31f9cbface98628",
+						"type": "text"
+					},
+					{
+						"key": "Referer",
+						"value": "https://35.200.176.139",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"aws-cloud-sudeepdoddamani51\",\r\n  \"vtype\": \"CLOUD_AWS\",\r\n  \"aws_configuration\": {\r\n    \"access_key_id\": \"dummy-access-key\",\r\n    \"secret_access_key\": \"dummy-secret-key\",\r\n    \"region\": \"us-west-1\",\r\n    \"vpc_id\": \"vpc-dummy\"\r\n  }\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://35.200.176.139/api/cloud",
+					"protocol": "https",
+					"host": [
+						"35",
+						"200",
+						"176",
+						"139"
+					],
+					"path": [
+						"api",
+						"cloud"
+					]
+				},
+				"description": "Step 2: Create Dummy AWS Cloud"
+			},
+			"response": []
+		},
+		{
+			"name": "https://35.200.176.139/api/cloud",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Cookie",
+						"value": "csrftoken=c469bae70933a6dca31f9cbface98628; avi-sessionid=3b37c0ba3c29a707c0feadbc072e818b;",
+						"type": "text"
+					},
+					{
+						"key": "Referer",
+						"value": "https://35.200.176.139/",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://35.200.176.139/api/cloud",
+					"protocol": "https",
+					"host": [
+						"35",
+						"200",
+						"176",
+						"139"
+					],
+					"path": [
+						"api",
+						"cloud"
+					]
+				},
+				"description": "Step 3: Verify Cloud Status"
+			},
+			"response": []
+		}
+	]
+}
